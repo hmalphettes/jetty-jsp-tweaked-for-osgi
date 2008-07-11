@@ -36,7 +36,7 @@
       <id>dev.java.net</id>
       <name>Glassfish Repository</name>
       <layout>legacy</layout>
-      <url>https://maven-repository.dev.java.net/nonav/repository</url>
+      <url>http://download.java.net/maven/1</url>
       <snapshots><enabled>false</enabled></snapshots>
     </repository>
   </repositories>
