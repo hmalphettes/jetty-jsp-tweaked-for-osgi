@@ -18,6 +18,14 @@
     <module>jsp-api-2.1</module>
     <module>jsp-2.1</module>
   </modules>
+  <plugins>
+    <plugin>
+      <artifactId>maven-release-plugin</artifactId>
+      <configuration>
+        <tagBase>https://svn.codehaus.org/jetty/jsp/tags</tagBase>
+      </configuration>
+    </plugin>
+  </plugins>
   <properties>
     <glassfish-tag-version>SJSAS-9_1_02-B04-11_Apr_2008</glassfish-tag-version>
   </properties>
