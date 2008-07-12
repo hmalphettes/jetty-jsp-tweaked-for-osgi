@@ -7,13 +7,13 @@
   <groupId>org.mortbay.jetty</groupId>
   <artifactId>jetty-jsp</artifactId>
   <packaging>pom</packaging>
-  <version>9.1.02.B04.p0</version>
+  <version>9.1.02.B04.p1</version>
   <modelVersion>4.0.0</modelVersion>
   <name>Jetty :: JSP Source Modules</name>
   <scm>
-    <connection>scm:svn:https://svn.codehaus.org/jetty/jsp/tags/jetty-jsp-9.1.02.B04.p0</connection>
-    <developerConnection>scm:svn:https://svn.codehaus.org/jetty/jsp/tags/jetty-jsp-9.1.02.B04.p0</developerConnection>
-    <url>scm:svn:https://svn.codehaus.org/jetty/jsp/tags/jetty-jsp-9.1.02.B04.p0</url>
+    <connection>scm:svn:https://svn.codehaus.org/jetty/jsp/trunk</connection>
+    <developerConnection>scm:svn:https://svn.codehaus.org/jetty/jsp/trunk</developerConnection>
+    <url>scm:svn:https://svn.codehaus.org/jetty/pom/tags/jetty-parent-3/jetty-jsp</url>
   </scm>
   <modules>
     <module>jsp-api-2.1</module>
