@@ -79,23 +79,6 @@
            </execution>
         </executions>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>do-sources</id>
-            <phase>package</phase>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-            <configuration>
-              <attach>true</attach>
-              <finalName>${project.artifactId}-${project.version}</finalName>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
   <dependencies>
@@ -109,11 +92,6 @@
       <artifactId>jsp-api-2.1-glassfish</artifactId>
       <version>${project.version}</version>
     </dependency>
-    <!-- dependency>
-       <groupId>com.sun.commons</groupId>
-       <artifactId>logging-api</artifactId>
-       <version>1.0.4</version>
-    </dependency -->
     <dependency>
       <groupId>ant</groupId>
       <artifactId>ant</artifactId>
