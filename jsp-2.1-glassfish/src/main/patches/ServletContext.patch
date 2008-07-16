@@ -1,0 +1,71 @@
+Index: org/apache/jasper/servlet/JspCServletContext.java
+===================================================================
+--- org/apache/jasper/servlet/JspCServletContext.java	2008-07-15 11:12:04.000000000 +1000
++++ apache/jasper/servlet/JspCServletContext.java	2008-04-21 13:11:17.000000000 +1000
+@@ -47,12 +47,16 @@
+ import java.io.PrintWriter;
+ import java.net.MalformedURLException;
+ import java.net.URL;
++import java.util.EnumSet;
+ import java.util.Enumeration;
+ import java.util.HashSet;
+ import java.util.Hashtable;
++import java.util.Map;
+ import java.util.Set;
+ import java.util.Vector;
+ import java.net.URL;
++
++import javax.servlet.DispatcherType;
+ import javax.servlet.RequestDispatcher;
+ import javax.servlet.Servlet;
+ import javax.servlet.ServletContext;
+@@ -458,5 +462,49 @@
+     }
+ 
+ 
++    /* ------------------------------------------------------------ */
++    /* (non-Javadoc)
++     * @see javax.servlet.ServletContext#addFilter(java.lang.String, java.lang.String, java.lang.String, java.util.Map)
++     */
++    public void addFilter(String filterName, String description, String className, Map<String, String> initParameters)
++    {
++        // TODO Auto-generated method stub
++        
++    }
++
++
++    /* ------------------------------------------------------------ */
++    /* (non-Javadoc)
++     * @see javax.servlet.ServletContext#addFilterMapping(java.lang.String, java.lang.String[], java.lang.String[], java.util.EnumSet, boolean)
++     */
++    public void addFilterMapping(String filterName, String[] urlPatterns, String[] servletNames, EnumSet<DispatcherType> dispatcherTypes, boolean isMatchAfter)
++    {
++        // TODO Auto-generated method stub
++        
++    }
++
++
++    /* ------------------------------------------------------------ */
++    /* (non-Javadoc)
++     * @see javax.servlet.ServletContext#addServlet(java.lang.String, java.lang.String, java.lang.String, java.util.Map, int)
++     */
++    public void addServlet(String servletName, String description, String className, Map<String, String> initParameters, int loadOnStartup)
++    {
++        // TODO Auto-generated method stub
++        
++    }
++
++
++    /* ------------------------------------------------------------ */
++    /* (non-Javadoc)
++     * @see javax.servlet.ServletContext#addServletMapping(java.lang.String, java.lang.String[])
++     */
++    public void addServletMapping(String servletName, String[] urlPatterns)
++    {
++        // TODO Auto-generated method stub
++        
++    }
++
++
+ 
+ }
