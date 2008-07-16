@@ -9,7 +9,7 @@
   <packaging>pom</packaging>
   <version>9.1.02.B04.p0-SNAPSHOT</version>
   <modelVersion>4.0.0</modelVersion>
-  <name>Jetty :: JSP Source Modules</name>
+  <name>Jetty :: JSP Modules</name>
   <scm>
     <connection>scm:svn:https://svn.codehaus.org/jetty/jsp/trunk</connection>
     <developerConnection>scm:svn:https://svn.codehaus.org/jetty/jsp/trunk</developerConnection>
