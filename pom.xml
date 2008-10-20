@@ -2,18 +2,18 @@
   <parent>
     <groupId>org.mortbay.jetty</groupId>
     <artifactId>jetty-parent</artifactId>
-    <version>3</version>
+    <version>7</version>
   </parent>
   <groupId>org.mortbay.jetty</groupId>
   <artifactId>jetty-jsp</artifactId>
   <packaging>pom</packaging>
-  <version>9.1.02.B04.p1-SNAPSHOT</version>
+  <version>9.1.1.B51.p0-SNAPSHOT</version>
   <modelVersion>4.0.0</modelVersion>
   <name>Jetty :: JSP Modules</name>
   <scm>
-    <connection>scm:svn:https://svn.codehaus.org/jetty/jsp/tags/jetty-jsp-9.1.02.B04.p0</connection>
-    <developerConnection>scm:svn:https://svn.codehaus.org/jetty/jsp/tags/jetty-jsp-9.1.02.B04.p0</developerConnection>
-    <url>scm:svn:https://svn.codehaus.org/jetty/jsp/tags/jetty-jsp-9.1.02.B04.p0</url>
+    <connection>scm:svn:https://svn.codehaus.org/jetty/jsp/trunk</connection>
+    <developerConnection>scm:svn:https://svn.codehaus.org/jetty/jsp/trunk</developerConnection>
+    <url>scm:svn:https://svn.codehaus.org/jetty/jsp/trunk</url>
   </scm>
   <modules>
     <module>jsp-api-2.1-glassfish</module>
@@ -30,7 +30,7 @@
   </plugins>
   </build>
   <properties>
-    <glassfish-tag-version>SJSAS-9_1_02-B04-11_Apr_2008</glassfish-tag-version>
+    <glassfish-tag-version>SJSAS-9_1_1-B51-18_Sept_2008</glassfish-tag-version>
   </properties>
   <repositories>
     <repository>
