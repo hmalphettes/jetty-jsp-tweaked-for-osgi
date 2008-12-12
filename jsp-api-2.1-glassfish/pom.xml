@@ -10,6 +10,12 @@
   <name>Glassfish :: Jasper API JSP 2.1</name>
   <description>JSP2.1 API</description>
   <packaging>jar</packaging>
+  <licenses>
+    <license>
+      <name>CDDL 1.0</name>
+      <url>https://glassfish.dev.java.net/public/CDDLv1.0.html</url>
+    </license>
+  </licenses>
   <build>
     <defaultGoal>install</defaultGoal>
     <resources>
