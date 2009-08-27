@@ -56,10 +56,16 @@ public class LogFactory
         {
             _clazzName=className;
             _clazz = Thread.currentThread().getContextClassLoader().loadClass(_clazzName);
+            _ctor = _clazz.getDeclaredConstructor(new Class[]{String.class});
         }
         catch (ClassNotFoundException e)
         {
             System.err.println("Log impl "+_clazzName+" not found on classpath, falling back to StdErrLog logger");
+        }
+        catch (NoSuchMethodException e)
+        {
+            System.err.println("No default constructor for "+className+", falling back to StdErrLog logger");
+            _clazz = StdErrLog.class;
         }
     }
     
