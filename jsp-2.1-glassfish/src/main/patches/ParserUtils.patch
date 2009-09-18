@@ -1,0 +1,14 @@
+Index: org/apache/jasper/xmlparser/ParserUtils.java
+===================================================================
+--- org/apache/jasper/xmlparser/ParserUtils.java	(revision 4)
++++ org/apache/jasper/xmlparser/ParserUtils.java	(working copy)
+@@ -157,6 +157,9 @@
+
+     // --------------------------------------------------------- Static Methods
+
++    public static void setEntityResolver(EntityResolver er) {
++        entityResolver = er;
++    }
+
+     // START PWC 6386258
+     /** 

@@ -91,7 +91,7 @@
             <configuration>
               <instructions>
                 <Bundle-RequiredExecutionEnvironment>J2SE-1.5</Bundle-RequiredExecutionEnvironment>
-                <Import-Package>!com.sun.appserv.*,!com.sun.common.util.*,!com.sun.el.*,!com.sun.enterprise.web.*,!com.sun.org.apache.commons.*,!org.apache.jasper.*,*</Import-Package>
+                <Import-Package>org.apache.tools.ant*;resolution:=optional,org.eclipse.jdt*;resolution:=optional,sun.*;resolution:=optional,com.sun.org.*;resolution:=optional,!com.sun.appserv.*,!com.sun.common.util.*,!com.sun.el.*,!com.sun.enterprise.web.*,!com.sun.org.apache.commons.*,!org.apache.jasper.*,*</Import-Package>
               </instructions>
             </configuration>
            </execution>
