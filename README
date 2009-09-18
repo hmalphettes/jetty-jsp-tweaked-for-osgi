@@ -1,0 +1,52 @@
+Tweaking jetty-jsp-9.1.1.B60.25.p2.jar to support hightide-on-OSGi.
+-------------------------------------------------------------------
+
+Fork of https://svn.codehaus.org/jetty/jsp/tags/jetty-jsp-9.1.1.B60.25.p2/
+Small modifications to be able to use the jasper-jetty bundle from OSGi.
+Please refer to https://bugs.eclipse.org/bugs/show_bug.cgi?id=289404
+
+Here is the experimental project that takes advantage of this fork:
+http://github.com/hmalphettes/osgi-webapp-simple
+
+
+Summary of the changes:
+
+Import-Package modifications:
+-----------------------------
+    All com.sun and sun.misc Package-Import optional.
+    ------------------------------------------------
+com.sun.org.apache.xml.internal*, com.sun.org.apache.xpath.internal*
+Used by the jstl xpath engine.
+Jasper extends the xpath engine of the jdk to add support to retrieve native java objects on the xml tree.
+Eclipse-PDE complains that those imports can not be done due to restrictions on rt.jar.
+Jan Bartel's workaround consists of placing those packages as part of the system property "org.osgi.framework.system.packages":
+http://docs.codehaus.org/display/JETTY/OSGi+Tips
+
+However I was able to execute succesffully the corresponding jstl tags without this workaround.
+
+com.sun.org.apache.xalan.internal.res
+None of the sources are directly importing this package. Making it optional does not hurt.
+
+
+    All jdt and ant Package-Import optional.
+    ----------------------------------------
+Jasper's dynamically select a compiler according to what it can find on the classpath. It does not require both.
+
+Additional Patches in src/main/patches:
+---------------------------------------
+    JDTJavaCompiler:
+    ----------------
+Support for using the bundle org.eclipse.jdt.core.compiler.batch-3.2.0 and more recent.
+core-3.1.1 which is the only supported version of eclipse-compiler without this patch is a problem as it requires equinox and eclipse-rcp to be loaded. The JDTJavaCompiler patched still supports core-3.1.1.
+
+    ParserUtils:
+    ------------
+Cherry-pick a static method "setEntityResolver" that has been added to more recent version of Jasper:
+https://jsp.dev.java.net/source/browse/jsp/trunk/impl/src/main/java/org/apache/jasper/xmlparser/ParserUtils.java
+exact revision: https://jsp.dev.java.net/source/browse/jsp?rev=955&view=rev
+
+This is used to be able to override the default resolution of the dtd when tld files are parsed.
+The dtd resolution relies on ParserUtils.class.getResource("/javax/servlet/resources/*.dtd").
+That does not work in OSGI as the dtd files are in packaged in a separate bundle and each bundle has a separate classloader.
+This method allow us to customize the resolution.
+
